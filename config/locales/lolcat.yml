@@ -1,0 +1,6 @@
+lolcat:
+  shared:
+    admin:
+      tag_editor:
+        tag_help: WRITE A TAG AND PRESS ENTER
+        default_text: ADD A TAG

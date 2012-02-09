@@ -1,0 +1,6 @@
+en:
+  shared:
+    admin:
+      tag_editor:
+        tag_help: Write a tag and press enter
+        default_text: add a tag

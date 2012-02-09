@@ -1,0 +1,16 @@
+<span class="label_with_help">
+  <%= f.label field -%>
+  <%= refinery_help_tag t('.tag_help') %>
+</span>
+<%= f.text_area field %>
+<%
+unless @tag_editor_included
+  @tag_editor_included = true
+  content_for :after_javascript_libraries, javascript_include_tag("jquery.tagsinput#{'.min' unless Rails.env.development?}.js")
+  content_for :stylesheets, stylesheet_link_tag('jquery.tagsinput.css')
+end
+
+autocomplete_url ||= admin_tags_path if autocomplete
+default_text ||= '.default_text'
+content_for :javascripts, javascript_tag("$(document).ready(function() { $('##{f.object_name}_#{field}').tagsInput({defaultText: '#{t default_text}'#{', autocomplete_url: ' + autocomplete_url.to_json if autocomplete}}); })")
+%>

@@ -1,0 +1,6 @@
+es:
+  shared:
+    admin:
+      tag_editor:
+        tag_help: Escribe una etiqueta y pulsa intro para añadirla
+        default_text: añade una etiqueta
