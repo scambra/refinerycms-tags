@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-tags'
-  s.version           = '1.0.1'
+  s.version           = '1.0.2'
   s.description       = 'acts-as-taggable-on interface for Refinery CMS'
   s.date              = '2012-02-07'
   s.summary           = 'Tags engine for Refinery CMS'
