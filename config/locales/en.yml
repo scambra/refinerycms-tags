@@ -4,3 +4,5 @@ en:
       tag_editor:
         tag_help: Write a tag and press enter
         default_text: add a tag
+      tag_list:
+        delete_tag_confirm: You are going to delete a tag. This change is permanent. Are you sure?

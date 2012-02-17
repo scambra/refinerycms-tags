@@ -1,0 +1,18 @@
+<% tags ||= ActsAsTaggableOn::Tag.order(:name).all %>
+<%= content_tag :ul, :class => 'tagsinput tag_list' do %>
+  <% tags.each do |tag| %>
+  <li><span class="tag">
+    <%= content_tag :span, tag.name %>
+    <%= link_to 'x', admin_tag_path(tag) %>
+  </span></li>
+  <% end %>
+<% end %>
+
+<%
+unless @taglist_included
+  @taglist_included = true
+  content_for :after_javascript_libraries, javascript_include_tag("taglist.js")
+end
+
+content_for :javascripts, javascript_tag("$(document).ready(function() { $('##{field_id} ~ .tag_list').tagList($('##{field_id}'), {confirm: '#{t '.delete_tag_confirm'}'}); });")
+%>

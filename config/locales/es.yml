@@ -4,3 +4,5 @@ es:
       tag_editor:
         tag_help: Escribe una etiqueta y pulsa intro para añadirla
         default_text: añade una etiqueta
+      tag_list:
+        delete_tag_confirm: Vas a borrar una etiqueta, esto no se puede deshacer. ¿Estás seguro?

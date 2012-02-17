@@ -4,3 +4,5 @@ lolcat:
       tag_editor:
         tag_help: WRITE A TAG AND PRESS ENTER
         default_text: ADD A TAG
+      tag_list:
+        delete_tag_confirm: YOU ARE GOING TO DELETE A TAG. THIS CHANGE IS PERMANENT. ARE YOU SURE?

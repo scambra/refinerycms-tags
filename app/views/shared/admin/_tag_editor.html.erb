@@ -1,8 +1,12 @@
-<span class="label_with_help">
-  <%= f.label field -%>
-  <%= refinery_help_tag t('.tag_help') %>
-</span>
-<%= f.text_area field %>
+<% field_id = "#{f.object_name}_#{field}" %>
+<div class="clearfix">
+  <span class="label_with_help">
+    <%= f.label field -%>
+    <%= refinery_help_tag t('.tag_help') %>
+  </span>
+  <%= f.text_area field %>
+  <%= render :partial => '/shared/admin/tag_list', :locals => {:field_id => field_id, :tags => local_assigns[:tags]} if local_assigns[:show_tag_list] %>
+</div>
 <%
 unless @tag_editor_included
   @tag_editor_included = true
@@ -12,5 +16,5 @@ end
 
 autocomplete_url ||= admin_tags_path if autocomplete
 default_text ||= '.default_text'
-content_for :javascripts, javascript_tag("$(document).ready(function() { $('##{f.object_name}_#{field}').tagsInput({defaultText: '#{t default_text}'#{', autocomplete_url: ' + autocomplete_url.to_json if autocomplete}}); })")
+content_for :javascripts, javascript_tag("$(document).ready(function() { $('##{field_id}').tagsInput({defaultText: '#{t default_text}'#{', autocomplete_url: ' + autocomplete_url.to_json if autocomplete}}); })")
 %>
