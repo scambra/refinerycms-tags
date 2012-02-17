@@ -28,3 +28,13 @@ Render the partial ``tag_editor``, set field local variable to the tag list and 
           :field => :activity_list,
           :autocomplete => true
         } %>
+        
+Use ``tag_list`` option to display a tag list with all created tags next to the field. You can show only some tags setting ``tags`` option.
+
+    <%= render :partial => "/shared/admin/tag_editor", :locals => {
+          :f => f,
+          :field => :activity_list,
+          :autocomplete => true,
+          :show_tag_list => true,
+          :tags => @more_used_tags
+        } %>
