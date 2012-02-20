@@ -20,6 +20,7 @@ module Refinery
           plugin.name = "tags"
           plugin.pathname = root
           plugin.hide_from_menu = true
+          plugin.always_allow_access = true
         end
       end
     end
